@@ -1,0 +1,558 @@
+
+/* =========================
+   FONT
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #000000;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+#wrap {
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.section-inner {
+    width: 100%;
+    padding: 0 20px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    width: auto;
+    height: 32px;
+    object-fit: contain;
+}
+
+.menu-btn {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    width: 100%;
+    height: 500px;
+    background-color: #888888;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================
+   SECTION 1 : ORDER
+========================= */
+
+.order-section {
+    width: 100%;
+    padding: 16px 20px 38px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.order-btn {
+    width: 100%;
+    height: 80px;
+
+    border: none;
+    border-radius: 16px;
+
+    background-color: #888888;
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.delivery-btn {
+    width: 100%;
+}
+
+.order-btn-group {
+    display: flex;
+    gap: 16px;
+}
+
+.order-btn-group .order-btn {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    font-size: 30px;
+    font-weight: 500;
+    color: #000000;
+    text-align: center;
+}
+
+
+/* =========================
+   TAG BUTTON
+========================= */
+
+.tag-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.tag-btn {
+    height: 35px;
+    padding: 0 18px;
+
+    border: 1px solid #999999;
+    border-radius: 30px;
+
+    background-color: transparent;
+    color: #777777;
+
+    font-size: 12px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.tag-btn.active {
+    background-color: #888888;
+    border-color: #888888;
+    color: #ffffff;
+}
+
+
+/* =========================
+   SECTION 2 : RECOMMEND
+========================= */
+
+.recommend-section {
+    width: 100%;
+    padding: 50px 0 150px;
+    background-color: #dddddd;
+}
+
+.recommend-section .section-title {
+    margin-bottom: 28px;
+}
+
+.recommend-section .tag-group {
+    margin-bottom: 16px;
+}
+
+
+/* 추천 메뉴 슬라이드 영역 */
+
+.recommend-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.recommend-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: max-content;
+    margin: 0 auto;
+}
+
+
+/* 추천 메뉴 카드 */
+
+.recommend-card {
+    position: relative;
+
+    flex: 0 0 184px;
+    height: 212px;
+
+    border-radius: 12px;
+    background-color: #888888;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recommend-info {
+    width: 100%;
+    padding-top: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: #ffffff;
+}
+
+.recommend-info h3 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.recommend-info p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.recommend-info button {
+    height: 32px;
+    padding: 0 18px;
+
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+
+    background: transparent;
+    color: #ffffff;
+
+    font-size: 12px;
+}
+
+
+/* 추천 메뉴 이미지 영역 */
+
+.recommend-image {
+    position: absolute;
+    left: 50%;
+    bottom: -64px;
+    transform: translateX(-50%);
+
+    width: 120px;
+    height: 120px;
+
+    background-color: #333333;
+}
+
+
+/* =========================
+   SECTION 3 : MENU
+========================= */
+
+.menu-section {
+    width: 100%;
+    padding: 50px 0 60px;
+    background-color: #ffffff;
+}
+
+.menu-section .section-title {
+    margin-bottom: 28px;
+}
+
+.menu-section .tag-group {
+    margin-bottom: 24px;
+}
+
+
+/* 메뉴 그리드 */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.menu-card {
+    width: 100%;
+}
+
+.menu-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 12px;
+    background-color: #888888;
+}
+
+.menu-card h3 {
+    margin-top: 6px;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+}
+
+
+/* =========================
+   SECTION 4 : EVENT
+========================= */
+
+.event-section {
+    width: 100%;
+    padding: 50px 0 60px;
+    background-color: #ffffff;
+}
+
+.event-section .section-title {
+    margin-bottom: 10px;
+}
+
+
+/* 이벤트 설명 */
+
+.event-description {
+    font-size: 14px;
+    font-weight: 500;
+    color: #838383;
+
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+
+/* 이벤트 탭 */
+
+.event-tab-group {
+    width: 100%;
+    height: 44px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+
+    margin-bottom: 24px;
+}
+
+.event-tab {
+    flex: 1;
+    height: 100%;
+
+    border: none;
+    background: transparent;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #cccccc;
+}
+
+.event-tab.active {
+    font-weight: 700;
+    color: #000000;
+}
+
+
+/* 이벤트 카드 */
+
+.event-card {
+    width: 100%;
+
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+
+/* 이벤트 이미지 */
+
+.event-image {
+    width: 100%;
+    height: 200px;
+    background-color: #aaaaaa;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* 이벤트 콘텐츠 */
+
+.event-content {
+    padding: 8px 10px 14px;
+}
+
+.event-subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555555;
+
+    margin-bottom: 4px;
+}
+
+.event-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+
+    line-height: 1.5;
+}
+
+.event-date {
+    margin-top: 26px;
+
+    font-size: 14px;
+    font-weight: 300;
+    color: #555555;
+}
+/* =========================
+   SIDE MENU
+========================= */
+
+/* 배경 오버레이 */
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease,
+                visibility 0.3s ease;
+
+    z-index: 100;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* 슬라이드 메뉴 */
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 66.666%;
+    max-width: 333px;
+    height: 100vh;
+
+    background-color: #ffffff;
+
+    padding: 30px 20px;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+
+    z-index: 101;
+}
+
+
+/* 메뉴 열림 상태 */
+
+.side-menu.active {
+    transform: translateX(0);
+}
+
+
+/* 메뉴 상단 */
+
+.side-menu-header {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.side-menu-header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000000;
+}
+
+
+/* 메뉴 리스트 */
+
+.side-menu-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.side-menu-list li {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.side-menu-list li a {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 65px;
+
+    color: #000000;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 500;
+}

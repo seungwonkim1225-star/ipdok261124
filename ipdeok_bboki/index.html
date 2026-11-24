@@ -1,12 +1,375 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>IPDEOK</title>
+
+    <!-- CSS 연결 -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-    
+
+<div id="wrap">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="header">
+
+        <a href="index.html" class="header-logo">
+            <img src="img/logo.png" alt="IPDEOK 로고">
+        </a>
+
+        <button type="button" class="menu-btn" aria-label="메뉴">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="24"
+                 height="24"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
+                <path d="M4 6h16"/>
+                <path d="M4 12h16"/>
+                <path d="M4 18h16"/>
+            </svg>
+        </button>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+    <section class="hero">
+
+        <img src="img/hero.jpg" alt="메인 배너">
+
+    </section>
+
+
+    <!-- =========================
+         SECTION 1 : ORDER
+    ========================== -->
+    <section class="order-section">
+
+        <button type="button" class="order-btn delivery-btn">
+            배달 주문하기
+        </button>
+
+        <div class="order-btn-group">
+
+            <button type="button" class="order-btn">
+                전화 주문하기
+            </button>
+
+            <button type="button" class="order-btn">
+                쿠폰 사용
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SECTION 2 : RECOMMEND MENU
+    ========================== -->
+    <section class="recommend-section">
+
+        <div class="section-inner">
+
+            <h2 class="section-title">추천 메뉴</h2>
+
+            <!-- 해시태그 -->
+            <div class="tag-group">
+
+                <button type="button" class="tag-btn active">
+                    #해시태그1
+                </button>
+
+                <button type="button" class="tag-btn">
+                    #해시태그2
+                </button>
+
+                <button type="button" class="tag-btn">
+                    #해시태그3
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- 추천 메뉴 콘텐츠 -->
+        <div class="recommend-slider">
+
+            <div class="recommend-track">
+
+                <!-- 추천 메뉴 1 -->
+                <article class="recommend-card">
+
+                    <div class="recommend-info">
+                        <h3>BEST 1</h3>
+                        <p>떡볶이 타이틀 작성</p>
+                        <button type="button">주문하기</button>
+                    </div>
+
+                    <div class="recommend-image"></div>
+
+                </article>
+
+
+                <!-- 추천 메뉴 2 -->
+                <article class="recommend-card">
+
+                    <div class="recommend-info">
+                        <h3>BEST 2</h3>
+                        <p>떡볶이 타이틀 작성</p>
+                        <button type="button">주문하기</button>
+                    </div>
+
+                    <div class="recommend-image"></div>
+
+                </article>
+
+
+                <!-- 추천 메뉴 3 -->
+                <article class="recommend-card">
+
+                    <div class="recommend-info">
+                        <h3>BEST 3</h3>
+                        <p>떡볶이 타이틀 작성</p>
+                        <button type="button">주문하기</button>
+                    </div>
+
+                    <div class="recommend-image"></div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SECTION 3 : MENU
+    ========================== -->
+    <section class="menu-section">
+
+        <div class="section-inner">
+
+            <h2 class="section-title">메뉴</h2>
+
+            <!-- 메뉴 탭 -->
+            <div class="tag-group">
+
+                <button type="button" class="tag-btn active">
+                    탭메뉴1
+                </button>
+
+                <button type="button" class="tag-btn">
+                    탭메뉴2
+                </button>
+
+                <button type="button" class="tag-btn">
+                    탭메뉴3
+                </button>
+
+            </div>
+
+
+            <!-- 메뉴 리스트 -->
+            <div class="menu-grid">
+
+                <article class="menu-card">
+                    <div class="menu-image"></div>
+                    <h3>떡볶이 메뉴 작성</h3>
+                </article>
+
+                <article class="menu-card">
+                    <div class="menu-image"></div>
+                    <h3>떡볶이 메뉴 작성</h3>
+                </article>
+
+                <article class="menu-card">
+                    <div class="menu-image"></div>
+                    <h3>떡볶이 메뉴 작성</h3>
+                </article>
+
+                <article class="menu-card">
+                    <div class="menu-image"></div>
+                    <h3>떡볶이 메뉴 작성</h3>
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SECTION 4 : EVENT
+    ========================== -->
+    <section class="event-section">
+
+        <div class="section-inner">
+
+            <h2 class="section-title">이벤트</h2>
+
+            <p class="event-description">
+                귀여운 캐릭터가 함께하는 입덕볶이 배경
+            </p>
+
+
+            <!-- 이벤트 탭 -->
+            <div class="event-tab-group">
+
+                <button type="button" class="event-tab active">
+                    진행중
+                </button>
+
+                <button type="button" class="event-tab">
+                    종료
+                </button>
+
+                <button type="button" class="event-tab">
+                    당첨자
+                </button>
+
+            </div>
+
+
+            <!-- 이벤트 콘텐츠 -->
+            <article class="event-card">
+
+                <div class="event-image">
+                    <img src="img/event-1.jpg" alt="이벤트 이미지">
+                </div>
+
+                <div class="event-content">
+
+                    <p class="event-subtitle">
+                        [할인증정 이벤트]
+                    </p>
+
+                    <h3 class="event-title">
+                        매달 추가되는 입덕볶이의 이벤트 내역입니다.
+                        자세한 내용은 이벤트 내용을 확인해 주세요.
+                    </h3>
+
+                    <p class="event-date">
+                        2026.11.23 - 2026.12.31
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+<script>
+
+    const menuBtn = document.getElementById('menuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    // 메뉴 열기 / 닫기
+    menuBtn.addEventListener('click', function () {
+
+        const isOpen = sideMenu.classList.toggle('active');
+
+        menuOverlay.classList.toggle('active');
+
+        menuBtn.setAttribute('aria-expanded', isOpen);
+
+    });
+
+    // 배경 클릭 시 메뉴 닫기
+    menuOverlay.addEventListener('click', function () {
+
+        sideMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+
+        menuBtn.setAttribute('aria-expanded', 'false');
+
+    });
+
+</script>
 </body>
 </html>
+<header class="header">
+
+  <header class="header">
+
+    <a href="index.html" class="header-logo">
+        <img src="img/logo.png" alt="IPDEOK 로고">
+    </a>
+
+    <button
+        type="button"
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="메뉴 열기"
+        aria-expanded="false"
+    >
+        <svg xmlns="http://www.w3.org/2000/svg"
+             width="24"
+             height="24"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="2"
+             stroke-linecap="round"
+             stroke-linejoin="round">
+            <path d="M4 6h16"/>
+            <path d="M4 12h16"/>
+            <path d="M4 18h16"/>
+        </svg>
+    </button>
+
+</header>
+
+
+
+② HEADER 바로 아래에 메뉴 HTML 추가
+<!-- 메뉴 배경 오버레이 -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- 슬라이드 메뉴 -->
+<nav class="side-menu" id="sideMenu">
+
+    <div class="side-menu-header">
+        <h2>MENU</h2>
+    </div>
+
+    <ul class="side-menu-list">
+
+        <li>
+            <a href="#">리스트페이지</a>
+        </li>
+
+        <li>
+            <a href="#">상세페이지</a>
+        </li>
+
+        <li>
+            <a href="#">결제</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+</header>
