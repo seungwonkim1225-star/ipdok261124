@@ -16,6 +16,11 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
 body {
     width: 100%;
     font-family: 'Noto Sans KR', sans-serif;
@@ -32,6 +37,9 @@ img {
     max-width: 100%;
 }
 
+
+/* 메인페이지 최대 가로 500px */
+
 #wrap {
     width: 100%;
     max-width: 500px;
@@ -39,6 +47,9 @@ img {
     margin: 0 auto;
     overflow: hidden;
 }
+
+
+/* 공통 좌우 여백 */
 
 .section-inner {
     width: 100%;
@@ -221,6 +232,7 @@ img {
     justify-content: center;
     align-items: center;
     gap: 12px;
+
     width: max-content;
     margin: 0 auto;
 }
@@ -458,16 +470,18 @@ img {
     font-weight: 300;
     color: #555555;
 }
+
+
+
 /* =========================
    SIDE MENU
 ========================= */
 
-/* 배경 오버레이 */
+/* 메뉴 배경 오버레이 */
 
 .menu-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
 
     width: 100%;
     height: 100vh;
@@ -476,6 +490,7 @@ img {
 
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
 
     transition: opacity 0.3s ease,
                 visibility 0.3s ease;
@@ -483,9 +498,12 @@ img {
     z-index: 100;
 }
 
+/* 오버레이 활성화 */
+
 .menu-overlay.active {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 
@@ -494,27 +512,36 @@ img {
 .side-menu {
     position: fixed;
     top: 0;
-    right: 0;
+    right: max(0px, calc((100vw - 500px) / 2));
 
     width: 66.666%;
     max-width: 333px;
     height: 100vh;
 
-    background-color: #ffffff;
-
     padding: 30px 20px;
 
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
+    background-color: #ffffff;
+
+    /* 기본 상태: 완전히 숨김 */
+    transform: translateX(calc(100% + 20px));
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: transform 0.3s ease,
+                visibility 0s linear 0.3s;
 
     z-index: 101;
 }
-
 
 /* 메뉴 열림 상태 */
 
 .side-menu.active {
     transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+
+    transition: transform 0.3s ease,
+                visibility 0s;
 }
 
 

@@ -1,0 +1,381 @@
+
+/* ==============================
+   기본 설정
+============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont,
+        "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+
+/* ==============================
+   모바일 페이지 컨테이너
+============================== */
+
+.mobile-container {
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ==============================
+   1. 최상단 띠 배너
+============================== */
+
+.top-banner {
+    background-color: #7d7d7d;
+    color: #ffffff;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 0;
+}
+
+
+/* ==============================
+   2. 헤더 영역
+============================== */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background-color: #ffffff;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    flex-shrink: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.page-title {
+    flex: 1;
+    margin: 0 0 0 24px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111111;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+
+/* ==============================
+   3. 카테고리 탭 메뉴
+============================== */
+
+.category-tabs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0 14px;
+    background-color: #ffffff;
+}
+
+.category-tab {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111111;
+    text-decoration: none;
+}
+
+
+/* ==============================
+   4. 메인 배너 영역
+============================== */
+
+.hero-banner {
+    width: 100%;
+    height: 290px;
+    background-color: #787878;
+}
+
+
+/* ==============================
+   5. 베스트 물품 섹션
+============================== */
+
+.best-section {
+    background-color: #d9d9d9;
+    margin-top: 22px;
+    padding: 16px 20px 24px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #111111;
+    margin: 0 0 14px;
+}
+
+.best-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.best-item {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.best-thumb {
+    width: 100%;
+    aspect-ratio: 1.25 / 1;
+    background-color: #a39b9b;
+    border-radius: 14px;
+    margin-bottom: 8px;
+}
+
+.product-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: #111111;
+}
+
+
+/* ==============================
+   6. 제품 리스트 섹션
+============================== */
+
+.list-section {
+    background-color: #d9d9d9;
+    margin-top: 24px;
+    padding: 20px 20px 16px;
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.list-thumb {
+    width: 102px;
+    height: 78px;
+    background-color: #a39b9b;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.list-info {
+    padding-top: 4px;
+}
+
+
+/* ==============================
+   7. 페이지네이션
+============================== */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #7d7d7d;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #000000;
+}
+
+
+/* ==============================
+   8. 하단 여백
+============================== */
+
+.bottom-space {
+    height: 250px;
+    background-color: #ffffff;
+}
+
+
+/* ==============================
+   9. 햄버거 메뉴 오버레이
+============================== */
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease,
+                visibility 0.3s ease;
+
+    z-index: 100;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+
+/* ==============================
+   10. 오른쪽 슬라이드 메뉴
+============================== */
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: max(0px, calc((100vw - 500px) / 2));
+
+    width: 66.666%;
+    max-width: 333px;
+    height: 100%;
+    padding: 30px 20px;
+
+    background-color: #ffffff;
+
+    transform: translateX(105%);
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: transform 0.3s ease,
+                visibility 0s linear 0.3s;
+
+    z-index: 101;
+}
+
+.side-menu.active {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+
+    transition: transform 0.3s ease,
+                visibility 0s;
+}
+
+
+/* ==============================
+   11. 메뉴 상단 영역
+============================== */
+
+.side-menu-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.side-menu-header h2 {
+    align-self: flex-start;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    color: #111111;
+}
+
+
+/* ==============================
+   12. 메뉴 내부 검색창
+============================== */
+
+.side-menu-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+
+    background-color: #eeeeee;
+    border-radius: 20px;
+}
+
+.side-menu-search input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 12px;
+}
+
+.side-menu-search svg {
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+
+/* ==============================
+   13. 메뉴 페이지 링크
+============================== */
+
+.side-menu-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.side-menu-list li a {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 60px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    color: #111111;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
