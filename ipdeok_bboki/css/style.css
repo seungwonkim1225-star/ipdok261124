@@ -1,14 +1,30 @@
 
-/* =========================
-   FONT
-========================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap');
 
 
-/* =========================
-   GLOBAL
-========================= */
+/* ==============================
+   브랜드 컬러
+============================== */
+
+:root {
+
+    --main-red: #e53928;
+    --dark-red: #b92b1e;
+    --cream: #fff9f3;
+    --light-orange: #fff0e2;
+    --soft-orange: #ffe8d6;
+    --yellow: #ffd95f;
+    --text-color: #2b1a16;
+    --sub-text: #8b7770;
+    --white: #ffffff;
+
+}
+
+
+/* ==============================
+   기본 설정
+============================== */
 
 * {
     margin: 0;
@@ -16,20 +32,22 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-    color: #000000;
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f1eeeb;
+    color: var(--text-color);
 }
 
-body {
-    width: 100%;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: #000000;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 button {
     font-family: inherit;
     cursor: pointer;
+    border: none;
+    background: none;
 }
 
 img {
@@ -37,549 +55,750 @@ img {
     max-width: 100%;
 }
 
+ul {
+    list-style: none;
+}
 
-/* 메인페이지 최대 가로 500px */
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 
 #wrap {
     width: 100%;
     max-width: 500px;
     min-height: 100vh;
     margin: 0 auto;
+    background-color: var(--cream);
+    padding-bottom: 85px;
     overflow: hidden;
+    box-shadow: 0 0 30px rgba(50, 25, 15, 0.05);
 }
 
-
-/* 공통 좌우 여백 */
-
 .section-inner {
-    width: 100%;
     padding: 0 20px;
 }
 
 
-/* =========================
+/* ==============================
    HEADER
-========================= */
+============================== */
 
 .header {
     width: 100%;
-    height: 60px;
+    height: 70px;
     padding: 0 20px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    background-color: var(--cream);
 }
 
 .header-logo {
-    display: flex;
-    align-items: center;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: var(--main-red);
 }
 
-.header-logo img {
-    width: auto;
-    height: 32px;
-    object-fit: contain;
+.header-logo span {
+    color: var(--dark-red);
 }
 
 .menu-btn {
-    width: 24px;
-    height: 24px;
+    width: 42px;
+    height: 42px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 0;
-    border: none;
-    background: none;
+    color: var(--text-color);
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* ==============================
+   메인 배너
+============================== */
 
 .hero {
-    width: 100%;
-    height: 500px;
-    background-color: #888888;
+    width: calc(100% - 32px);
+    margin: 0 auto;
+
+    border-radius: 18px;
     overflow: hidden;
+
+    background-color: var(--soft-orange);
 }
 
 .hero img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
 }
 
 
-/* =========================
-   SECTION 1 : ORDER
-========================= */
+/* ==============================
+   주문 버튼
+============================== */
 
 .order-section {
-    width: 100%;
-    padding: 16px 20px 38px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+    padding: 18px 16px 30px;
 }
 
 .order-btn {
     width: 100%;
-    height: 80px;
+    min-height: 62px;
+    border-radius: 12px;
 
-    border: none;
-    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
 
-    background-color: #888888;
-    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
 
-    font-size: 20px;
-    font-weight: 500;
+    transition: opacity 0.2s,
+                transform 0.2s;
+}
+
+.order-btn:active {
+    transform: scale(0.98);
+    opacity: 0.8;
 }
 
 .delivery-btn {
-    width: 100%;
+    min-height: 72px;
+
+    background-color: var(--main-red);
+    color: var(--white);
+
+    font-size: 19px;
+
+    box-shadow: 0 5px 12px
+                rgba(229, 57, 40, 0.18);
 }
 
 .order-btn-group {
-    display: flex;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 10px;
 }
 
-.order-btn-group .order-btn {
-    flex: 1;
-    min-width: 0;
+.sub-order-btn {
+    background-color: var(--soft-orange);
+    color: var(--dark-red);
+}
+
+.order-icon {
+    font-size: 21px;
 }
 
 
-/* =========================
-   SECTION TITLE
-========================= */
+/* ==============================
+   공통 섹션 제목
+============================== */
+
+.section-label {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--main-red);
+    margin-bottom: 8px;
+}
 
 .section-title {
-    font-size: 30px;
-    font-weight: 500;
-    color: #000000;
-    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -1.3px;
+    line-height: 1.4;
+    color: var(--text-color);
+}
+
+.section-description {
+    margin-top: 7px;
+    font-size: 13px;
+    color: var(--sub-text);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.more-btn {
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--main-red);
 }
 
 
-/* =========================
-   TAG BUTTON
-========================= */
+/* ==============================
+   해시태그 및 메뉴 탭
+============================== */
 
 .tag-group {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 20px;
+    margin-bottom: 24px;
 }
 
 .tag-btn {
-    height: 35px;
-    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    border: 1px solid #999999;
+    padding: 9px 15px;
     border-radius: 30px;
 
-    background-color: transparent;
-    color: #777777;
+    background-color: #f0e7df;
+    color: #79635a;
 
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 600;
     white-space: nowrap;
 }
 
 .tag-btn.active {
-    background-color: #888888;
-    border-color: #888888;
-    color: #ffffff;
+    background-color: var(--main-red);
+    color: var(--white);
 }
 
 
-/* =========================
-   SECTION 2 : RECOMMEND
-========================= */
+/* ==============================
+   추천 메뉴
+============================== */
 
 .recommend-section {
-    width: 100%;
-    padding: 50px 0 150px;
-    background-color: #dddddd;
-}
-
-.recommend-section .section-title {
-    margin-bottom: 28px;
-}
-
-.recommend-section .tag-group {
-    margin-bottom: 16px;
-}
-
-
-/* 추천 메뉴 슬라이드 영역 */
-
-.recommend-slider {
-    width: 100%;
-    overflow: hidden;
+    padding: 35px 0 40px;
+    background-color: var(--light-orange);
 }
 
 .recommend-track {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
-
-    width: max-content;
-    margin: 0 auto;
+    width: 100%;
 }
-
-
-/* 추천 메뉴 카드 */
 
 .recommend-card {
-    position: relative;
-
-    flex: 0 0 184px;
-    height: 212px;
-
-    border-radius: 12px;
-    background-color: #888888;
+    min-width: 0;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 15px
+                rgba(80, 40, 20, 0.06);
 }
 
-.recommend-info {
+
+/* 추천 메뉴 이미지 */
+
+.recommend-image {
+    position: relative;
     width: 100%;
-    padding-top: 16px;
+    aspect-ratio: 1 / 1;
+    background-color: var(--white);
+}
+
+.recommend-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* BEST 표시 */
+
+.best-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    padding: 6px 10px;
+    border-radius: 6px;
+
+    background-color: var(--main-red);
+    color: var(--white);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+
+/* 추천 메뉴 정보 */
+
+.recommend-info {
+    flex: 1;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
 
-    color: #ffffff;
+    padding: 15px 12px;
 }
 
 .recommend-info h3 {
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+    margin-bottom: 5px;
 }
 
 .recommend-info p {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 12px;
+    font-size: 11px;
+    color: var(--sub-text);
+    margin-bottom: 18px;
 }
 
 .recommend-info button {
-    height: 32px;
-    padding: 0 18px;
+    width: 100%;
+    min-height: 39px;
+    margin-top: auto;
 
-    border: 1px solid #ffffff;
-    border-radius: 20px;
+    border-radius: 30px;
+    background-color: var(--main-red);
+    color: var(--white);
 
-    background: transparent;
-    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+}
 
-    font-size: 12px;
+.recommend-info button:active {
+    background-color: var(--dark-red);
 }
 
 
-/* 추천 메뉴 이미지 영역 */
-
-.recommend-image {
-    position: absolute;
-    left: 50%;
-    bottom: -64px;
-    transform: translateX(-50%);
-
-    width: 120px;
-    height: 120px;
-
-    background-color: #333333;
-}
-
-
-/* =========================
-   SECTION 3 : MENU
-========================= */
+/* ==============================
+   전체 메뉴
+============================== */
 
 .menu-section {
-    width: 100%;
-    padding: 50px 0 60px;
-    background-color: #ffffff;
+    padding: 40px 0;
 }
-
-.menu-section .section-title {
-    margin-bottom: 28px;
-}
-
-.menu-section .tag-group {
-    margin-bottom: 24px;
-}
-
-
-/* 메뉴 그리드 */
 
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    gap: 24px 14px;
 }
 
 .menu-card {
-    width: 100%;
+    display: block;
+    min-width: 0;
 }
 
 .menu-image {
     width: 100%;
     aspect-ratio: 1 / 1;
 
-    border-radius: 12px;
-    background-color: #888888;
+    border-radius: 14px;
+    overflow: hidden;
+
+    background-color: var(--white);
+}
+
+.menu-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover .menu-image img {
+    transform: scale(1.03);
 }
 
 .menu-card h3 {
-    margin-top: 6px;
+    margin-top: 12px;
 
-    font-size: 14px;
-    font-weight: 500;
-    color: #000000;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.menu-card p {
+    margin-top: 5px;
+
+    font-size: 12px;
+    color: var(--sub-text);
 }
 
 
-/* =========================
-   SECTION 4 : EVENT
-========================= */
+/* ==============================
+   이벤트
+============================== */
 
 .event-section {
-    width: 100%;
-    padding: 50px 0 60px;
-    background-color: #ffffff;
+    padding: 35px 0 40px;
+    border-top: 1px solid #f0e5db;
 }
 
-.event-section .section-title {
-    margin-bottom: 10px;
+.event-tab-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #e8ded5;
+}
+
+.event-tab {
+    padding: 12px 0;
+    font-size: 13px;
+    color: var(--sub-text);
+}
+
+.event-tab.active {
+    color: var(--main-red);
+    font-weight: 700;
+    border-bottom: 2px solid var(--main-red);
+}
+
+.event-card {
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--white);
+    box-shadow: 0 4px 15px rgba(80, 40, 20, 0.05);
+}
+
+
+/* 이벤트 배너 */
+
+.event-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+
+    width: 100%;
+    min-height: 210px;
+    padding: 22px 18px;
+
+    background-color: var(--yellow);
+    overflow: hidden;
+}
+
+.event-banner-text {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    min-width: 0;
+}
+
+.event-banner-text span {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--dark-red);
+}
+
+.event-banner-text h3 {
+    margin: 10px 0;
+
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: -1.4px;
+    line-height: 1.35;
+
+    color: #9c2c19;
+}
+
+.event-banner-text p {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9c2c19;
+}
+
+.event-character {
+    flex-shrink: 0;
+    width: 115px;
+    height: auto;
 }
 
 
 /* 이벤트 설명 */
 
-.event-description {
-    font-size: 14px;
-    font-weight: 500;
-    color: #838383;
-
-    text-align: center;
-    margin-bottom: 24px;
-}
-
-
-/* 이벤트 탭 */
-
-.event-tab-group {
-    width: 100%;
-    height: 44px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    border-top: 1px solid #eeeeee;
-    border-bottom: 1px solid #eeeeee;
-
-    margin-bottom: 24px;
-}
-
-.event-tab {
-    flex: 1;
-    height: 100%;
-
-    border: none;
-    background: transparent;
-
-    font-size: 14px;
-    font-weight: 500;
-    color: #cccccc;
-}
-
-.event-tab.active {
-    font-weight: 700;
-    color: #000000;
-}
-
-
-/* 이벤트 카드 */
-
-.event-card {
-    width: 100%;
-
-    border: 1px solid #eeeeee;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-
-/* 이벤트 이미지 */
-
-.event-image {
-    width: 100%;
-    height: 200px;
-    background-color: #aaaaaa;
-}
-
-.event-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-/* 이벤트 콘텐츠 */
-
 .event-content {
-    padding: 8px 10px 14px;
+    padding: 20px 16px;
 }
 
 .event-subtitle {
-    font-size: 14px;
-    font-weight: 500;
-    color: #555555;
-
-    margin-bottom: 4px;
+    color: var(--main-red);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 .event-title {
-    font-size: 16px;
-    font-weight: 500;
-    color: #000000;
+    font-size: 17px;
+    font-weight: 800;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
 
-    line-height: 1.5;
+.event-description {
+    font-size: 13px;
+    color: var(--sub-text);
+    line-height: 1.7;
 }
 
 .event-date {
-    margin-top: 26px;
-
-    font-size: 14px;
-    font-weight: 300;
-    color: #555555;
+    margin-top: 15px;
+    font-size: 11px;
+    color: #ad9b92;
 }
 
 
+/* ==============================
+   브랜드 푸터
+============================== */
 
-/* =========================
-   SIDE MENU
-========================= */
+.brand-footer {
+    padding: 30px 20px;
+    background-color: #f3eae1;
+}
 
-/* 메뉴 배경 오버레이 */
+.brand-footer h2 {
+    font-size: 23px;
+    font-weight: 900;
+    color: var(--main-red);
+    letter-spacing: -1px;
+}
+
+.brand-footer p {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--sub-text);
+}
+
+.brand-footer span {
+    display: block;
+    margin-top: 20px;
+    font-size: 11px;
+    color: #ad9b92;
+}
+
+
+/* ==============================
+   하단 내비게이션
+============================== */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 500px;
+
+    min-height: 75px;
+    padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    background-color: var(--white);
+    border-top: 1px solid #eee4dc;
+
+    box-shadow: 0 -4px 15px
+                rgba(60, 30, 15, 0.04);
+
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    color: #a1928a;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.nav-item svg {
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.nav-item.active {
+    color: var(--main-red);
+    font-weight: 700;
+}
+
+
+/* ==============================
+   햄버거 메뉴 배경
+============================== */
 
 .menu-overlay {
     position: fixed;
     inset: 0;
 
-    width: 100%;
-    height: 100vh;
-
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.45);
 
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
 
     transition: opacity 0.3s ease,
                 visibility 0.3s ease;
 
-    z-index: 100;
+    z-index: 200;
 }
-
-/* 오버레이 활성화 */
 
 .menu-overlay.active {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
 }
 
 
-/* 슬라이드 메뉴 */
+/* ==============================
+   슬라이드 메뉴
+============================== */
 
 .side-menu {
     position: fixed;
     top: 0;
-    right: max(0px, calc((100vw - 500px) / 2));
+    right: max(0px, calc((100% - 500px) / 2));
 
-    width: 66.666%;
-    max-width: 333px;
-    height: 100vh;
+    width: min(300px, 85vw);
+    height: 100dvh;
 
-    padding: 30px 20px;
+    padding: 25px 20px;
 
-    background-color: #ffffff;
+    background-color: var(--cream);
 
-    /* 기본 상태: 완전히 숨김 */
-    transform: translateX(calc(100% + 20px));
+    transform: translateX(110%);
     visibility: hidden;
-    pointer-events: none;
 
     transition: transform 0.3s ease,
-                visibility 0s linear 0.3s;
+                visibility 0.3s ease;
 
-    z-index: 101;
+    overflow-y: auto;
+    z-index: 300;
 }
-
-/* 메뉴 열림 상태 */
 
 .side-menu.active {
     transform: translateX(0);
     visibility: visible;
-    pointer-events: auto;
-
-    transition: transform 0.3s ease,
-                visibility 0s;
 }
 
-
-/* 메뉴 상단 */
-
 .side-menu-header {
-    padding-bottom: 25px;
-    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .side-menu-header h2 {
-    font-size: 24px;
-    font-weight: 500;
-    color: #000000;
+    color: var(--main-red);
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: -1px;
 }
 
+.close-menu-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 30px;
+    color: var(--text-color);
+}
 
-/* 메뉴 리스트 */
-
-.side-menu-list {
-    list-style: none;
-    margin-top: 20px;
+.side-menu-description {
+    font-size: 12px;
+    color: var(--sub-text);
+    margin-top: 8px;
+    margin-bottom: 35px;
 }
 
 .side-menu-list li {
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid #eadfd5;
 }
 
 .side-menu-list li a {
-    display: flex;
-    align-items: center;
-
-    width: 100%;
-    height: 65px;
-
-    color: #000000;
-    text-decoration: none;
+    display: block;
+    padding: 20px 5px;
 
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
+}
+
+.side-menu-list li a:hover {
+    color: var(--main-red);
+}
+
+
+/* ==============================
+   작은 모바일 화면
+============================== */
+
+@media (max-width: 380px) {
+
+    .section-inner {
+        padding: 0 16px;
+    }
+
+    .section-title {
+        font-size: 23px;
+    }
+
+    .recommend-track {
+        gap: 10px;
+    }
+
+    .recommend-info {
+        padding: 12px 10px;
+    }
+
+    .recommend-info h3 {
+        font-size: 14px;
+    }
+
+    .tag-btn {
+        font-size: 11px;
+        padding: 8px 12px;
+    }
+
+    .event-banner-text h3 {
+        font-size: 21px;
+    }
+
+    .event-character {
+        width: 90px;
+    }
+
+    .event-banner {
+        padding: 18px 14px;
+        min-height: 180px;
+    }
+
 }

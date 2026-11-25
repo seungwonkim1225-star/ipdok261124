@@ -4,229 +4,835 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카테고리 페이지</title>
+
+    <title>전체 메뉴 | 입떡볶이</title>
 
     <link rel="stylesheet" href="css/list.css">
+
 </head>
 
 <body>
 
-    <div class="mobile-container">
+<div id="wrap">
 
-        <!-- 최상단 띠 배너 -->
-        <div class="top-banner">
-            혜택 안내
-        </div>
+    <!-- =========================
+         상단 안내 배너
+    ========================== -->
 
-        <!-- 상단 헤더 -->
-        <header class="header">
-
-            <button class="back-btn" type="button" aria-label="뒤로가기"
-                onclick="history.back()">
-                <svg width="20" height="20" viewBox="0 0 24 24"
-                     fill="none" stroke="#111111" stroke-width="2.5"
-                     stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                </svg>
-            </button>
-
-            <h1 class="page-title">카테고리명</h1>
-
-            <!-- 햄버거 버튼 -->
-            <button class="menu-btn" id="menuBtn"
-                    type="button"
-                    aria-label="메뉴 열기"
-                    aria-expanded="false">
-
-                <svg width="26" height="26" viewBox="0 0 24 24"
-                     fill="none" stroke="#111111" stroke-width="2"
-                     stroke-linecap="round">
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-
-            </button>
-
-        </header>
-
-
-        <!-- 카테고리 탭 -->
-        <nav class="category-tabs">
-            <a href="#" class="category-tab">카테고리</a>
-            <a href="#" class="category-tab">카테고리</a>
-            <a href="#" class="category-tab">카테고리</a>
-            <a href="#" class="category-tab">카테고리</a>
-        </nav>
-
-
-        <!-- 메인 배너 -->
-        <section class="hero-banner"></section>
-
-
-        <!-- 베스트 물품 -->
-        <section class="best-section">
-
-            <h2 class="section-title">베스트 물품</h2>
-
-            <div class="best-grid">
-
-                <div class="best-item">
-                    <div class="best-thumb"></div>
-                    <span class="product-name">제품명</span>
-                </div>
-
-                <div class="best-item">
-                    <div class="best-thumb"></div>
-                    <span class="product-name">제품명</span>
-                </div>
-
-                <div class="best-item">
-                    <div class="best-thumb"></div>
-                    <span class="product-name">제품명</span>
-                </div>
-
-                <div class="best-item">
-                    <div class="best-thumb"></div>
-                    <span class="product-name">제품명</span>
-                </div>
-
-                <div class="best-item">
-                    <div class="best-thumb"></div>
-                    <span class="product-name">제품명</span>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- 하단 제품 리스트 -->
-        <section class="list-section">
-
-            <div class="product-list">
-
-                <div class="list-item">
-                    <div class="list-thumb"></div>
-                    <div class="list-info">
-                        <span class="product-name">제품명</span>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="list-thumb"></div>
-                    <div class="list-info">
-                        <span class="product-name">제품명</span>
-                    </div>
-                </div>
-
-                <div class="list-item">
-                    <div class="list-thumb"></div>
-                    <div class="list-info">
-                        <span class="product-name">제품명</span>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- 페이지네이션 -->
-            <div class="pagination">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-
-        </section>
-
-
-        <!-- 하단 여백 -->
-        <div class="bottom-space"></div>
-
+    <div class="top-banner">
+        주문할 때마다 스탬프 적립! ♥
     </div>
 
 
-    <!-- 메뉴 배경 오버레이 -->
-    <div class="menu-overlay" id="menuOverlay"></div>
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <a href="../../index.html"
+           class="back-btn"
+           aria-label="메인 페이지로 돌아가기">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M19 12H5 M12 5L5 12L12 19"/>
+            </svg>
+
+        </a>
+
+        <h1>전체 메뉴</h1>
+
+        <button type="button"
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="메뉴 열기"
+                aria-expanded="false"
+                aria-controls="sideMenu">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M4 6H20 M4 12H20 M4 18H20"/>
+            </svg>
+
+        </button>
+
+    </header>
 
 
-    <!-- 오른쪽 슬라이드 메뉴 -->
-    <nav class="side-menu" id="sideMenu">
+    <!-- =========================
+         메뉴 카테고리
+    ========================== -->
 
-        <div class="side-menu-header">
+    <nav class="category-nav">
 
-            <h2>MENU</h2>
+        <a href="#bestMenu" class="category-btn active">
+            떡볶이
+        </a>
 
-            <!-- 메뉴 내부 검색창 -->
-            <div class="side-menu-search">
+        <a href="#sideMenuSection" class="category-btn">
+            사이드
+        </a>
 
-                <input type="text" placeholder="검색어 입력"
-                       aria-label="검색어 입력">
+        <button type="button"
+                class="category-btn"
+                onclick="alert('세트메뉴 준비 중입니다.')">
+            세트메뉴
+        </button>
 
-                <svg width="18" height="18" viewBox="0 0 24 24"
-                     fill="none" stroke="currentColor"
-                     stroke-width="2" stroke-linecap="round">
-                    <circle cx="11" cy="11" r="7"></circle>
-                    <line x1="20" y1="20" x2="16.2" y2="16.2"></line>
-                </svg>
-
-            </div>
-
-        </div>
-
-
-        <!-- 메뉴 페이지 이동 -->
-        <ul class="side-menu-list">
-
-            <li>
-                <a href="../../index.html">메인 페이지</a>
-            </li>
-
-            <li>
-                <a href="list.html">리스트 페이지</a>
-            </li>
-
-            <li>
-                <a href="../details/details.html">상세 페이지</a>
-            </li>
-
-            <li>
-                <a href="../payments/payments.html">결제 페이지</a>
-            </li>
-
-        </ul>
+        <button type="button"
+                class="category-btn"
+                onclick="alert('음료 메뉴 준비 중입니다.')">
+            음료/기타
+        </button>
 
     </nav>
 
 
-    <!-- 햄버거 메뉴 동작 -->
-    <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const sideMenu = document.getElementById('sideMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
+    <!-- =========================
+         메인 배너
+    ========================== -->
 
-        // 메뉴 열기 / 닫기
-        menuBtn.addEventListener('click', function () {
+    <section class="hero-section">
 
-            const isOpen = sideMenu.classList.toggle('active');
+        <div class="hero-banner">
 
-            menuOverlay.classList.toggle('active');
+            <!-- 나중에 이미지 추가 -->
 
-            menuBtn.setAttribute('aria-expanded', isOpen);
+            <div class="hero-image"></div>
+
+            <div class="hero-content">
+
+                <span>IPDEOK SIGNATURE</span>
+
+                <h2>오늘도 떡볶이에 입덕!</h2>
+
+                <p>
+                    매콤함부터 꾸덕함까지,
+                    취향대로 즐겨봐.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         베스트 메뉴
+    ========================== -->
+
+    <section class="best-section" id="bestMenu">
+
+        <div class="section-inner">
+
+            <p class="section-label">
+                BEST MENU
+            </p>
+
+            <h2 class="section-title">
+                입덕할 수밖에 없는 맛 🔥
+            </h2>
+
+            <p class="section-description">
+                입떡볶이의 인기 메뉴를 만나보세요.
+            </p>
+
+
+            <div class="product-grid">
+
+                <!-- 일반 떡볶이 -->
+
+                <article class="product-card">
+
+                    <a href="../details/detail.html">
+
+                        <div class="product-image"></div>
+
+                    </a>
+
+                    <div class="product-info">
+
+                        <span class="product-label">
+                            SIGNATURE
+                        </span>
+
+                        <h3>입떡볶이</h3>
+
+                        <p>매콤달콤 기본의 정석</p>
+
+                        <div class="price-row">
+
+                            <strong>9,000원</strong>
+
+                            <a href="../details/detail.html"
+                               class="add-btn"
+                               aria-label="입떡볶이 선택">
+                                +
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 로제 떡볶이 -->
+
+                <article class="product-card">
+
+                    <a href="../details/detail.html">
+
+                        <div class="product-image"></div>
+
+                    </a>
+
+                    <div class="product-info">
+
+                        <span class="product-label">
+                            BEST 01
+                        </span>
+
+                        <h3>꾸덕 로제 떡볶이</h3>
+
+                        <p>부드럽고 꾸덕한 매력</p>
+
+                        <div class="price-row">
+
+                            <strong>12,000원</strong>
+
+                            <a href="../details/detail.html"
+                               class="add-btn"
+                               aria-label="로제 떡볶이 선택">
+                                +
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 마라 떡볶이 -->
+
+                <article class="product-card">
+
+                    <a href="../details/detail.html">
+
+                        <div class="product-image"></div>
+
+                    </a>
+
+                    <div class="product-info">
+
+                        <span class="product-label">
+                            BEST 02
+                        </span>
+
+                        <h3>얼얼 마라 떡볶이</h3>
+
+                        <p>중독적인 얼얼한 맛</p>
+
+                        <div class="price-row">
+
+                            <strong>13,000원</strong>
+
+                            <a href="../details/detail.html"
+                               class="add-btn"
+                               aria-label="마라 떡볶이 선택">
+                                +
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- 짬뽕 떡볶이 -->
+
+                <article class="product-card">
+
+                    <a href="../details/detail.html">
+
+                        <div class="product-image"></div>
+
+                    </a>
+
+                    <div class="product-info">
+
+                        <span class="product-label">
+                            SPECIAL
+                        </span>
+
+                        <h3>얼큰 짬뽕 떡볶이</h3>
+
+                        <p>깊고 진한 국물의 매력</p>
+
+                        <div class="price-row">
+
+                            <strong>13,000원</strong>
+
+                            <a href="../details/detail.html"
+                               class="add-btn"
+                               aria-label="짬뽕 떡볶이 선택">
+                                +
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         사이드 메뉴 할인 이벤트
+    ========================== -->
+
+    <section class="side-section" id="sideMenuSection">
+
+        <div class="section-inner">
+
+            <p class="section-label">
+                IPDEOK SPECIAL OFFER
+            </p>
+
+            <h2 class="promotion-title">
+
+                그것만 먹게?<br>
+
+                <span>지금이 기회야!!</span>
+
+            </h2>
+
+            <p class="section-description">
+                떡볶이와 함께 즐기는 사이드 메뉴 500원 할인!
+            </p>
+
+
+            <div class="side-list">
+
+                <!-- 모둠튀김 -->
+
+                <article class="side-card">
+
+                    <div class="side-image"></div>
+
+                    <div class="side-info">
+
+                        <h3>바삭 모둠튀김</h3>
+
+                        <p>떡볶이 소스에 찍어 먹는 꿀조합</p>
+
+                        <del class="original-price">
+                            4,500원
+                        </del>
+
+                        <div class="discount-row">
+
+                            <strong class="discount-price">
+                                4,000원
+                            </strong>
+
+                            <span class="discount-label">
+                                500원 할인
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <button type="button"
+                            class="add-btn side-add-btn"
+                            data-name="바삭 모둠튀김"
+                            data-price="4000"
+                            aria-label="모둠튀김 추가"
+                            aria-pressed="false">
+                        +
+                    </button>
+
+                </article>
+
+
+                <!-- 찰순대 -->
+
+                <article class="side-card">
+
+                    <div class="side-image"></div>
+
+                    <div class="side-info">
+
+                        <h3>쫄깃 찰순대</h3>
+
+                        <p>떡볶이와 빠질 수 없는 단짝</p>
+
+                        <del class="original-price">
+                            4,000원
+                        </del>
+
+                        <div class="discount-row">
+
+                            <strong class="discount-price">
+                                3,500원
+                            </strong>
+
+                            <span class="discount-label">
+                                500원 할인
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <button type="button"
+                            class="add-btn side-add-btn"
+                            data-name="쫄깃 찰순대"
+                            data-price="3500"
+                            aria-label="찰순대 추가"
+                            aria-pressed="false">
+                        +
+                    </button>
+
+                </article>
+
+
+                <!-- 주먹밥 -->
+
+                <article class="side-card">
+
+                    <div class="side-image"></div>
+
+                    <div class="side-info">
+
+                        <h3>고소한 주먹밥</h3>
+
+                        <p>매운맛을 잡아주는 고소함</p>
+
+                        <del class="original-price">
+                            3,500원
+                        </del>
+
+                        <div class="discount-row">
+
+                            <strong class="discount-price">
+                                3,000원
+                            </strong>
+
+                            <span class="discount-label">
+                                500원 할인
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <button type="button"
+                            class="add-btn side-add-btn"
+                            data-name="고소한 주먹밥"
+                            data-price="3000"
+                            aria-label="주먹밥 추가"
+                            aria-pressed="false">
+                        +
+                    </button>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         스탬프 이벤트 배너
+    ========================== -->
+
+    <section class="stamp-section">
+
+        <a href="../payments_finish/payments_finish.html"
+           class="stamp-banner">
+
+            <div class="stamp-content">
+
+                <span>IPDEOK STAMP</span>
+
+                <h2>
+                    맛있게 먹고<br>
+                    혜택도 챙기자!
+                </h2>
+
+                <p>
+                    스탬프 10개를 모아 특별한 혜택 받기 →
+                </p>
+
+            </div>
+
+            <svg class="stamp-character"
+                 viewBox="0 0 100 140">
+
+                <path d="M25 65L5 48 M75 65L95 48
+                         M35 112L28 135 M65 112L72 135"
+                      stroke="#93291c"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                      fill="none"/>
+
+                <rect x="22" y="8"
+                      width="56" height="110"
+                      rx="28"
+                      fill="#e53928"
+                      stroke="#a82c20"
+                      stroke-width="2"/>
+
+                <circle cx="39" cy="48" r="4"
+                        fill="#44221a"/>
+
+                <circle cx="61" cy="48" r="4"
+                        fill="#44221a"/>
+
+                <path d="M40 62Q50 75 60 62"
+                      stroke="#44221a"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      fill="none"/>
+
+                <ellipse cx="31" cy="60"
+                         rx="6" ry="4"
+                         fill="#ff9d8d"/>
+
+                <ellipse cx="69" cy="60"
+                         rx="6" ry="4"
+                         fill="#ff9d8d"/>
+
+            </svg>
+
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         사이드 메뉴 선택 내역
+    ========================== -->
+
+    <section class="selection-summary"
+             id="selectionSummary"
+             hidden>
+
+        <div class="selection-info">
+
+            <p id="selectedCount">선택한 사이드 0개</p>
+
+            <strong id="selectedTotal">0원</strong>
+
+        </div>
+
+        <a href="../paymetns/payments.html"
+           class="payment-btn">
+            결제 페이지 이동
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         브랜드 푸터
+    ========================== -->
+
+    <footer class="brand-footer">
+
+        <h2>입떡볶이.</h2>
+
+        <p>입덕할 만큼 맛있는 떡볶이</p>
+
+        <span>© IPDEOK BBOKI</span>
+
+    </footer>
+
+
+    <!-- =========================
+         하단 내비게이션
+    ========================== -->
+
+    <nav class="bottom-nav">
+
+        <a href="../../index.html" class="nav-item">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M3 10L12 3L21 10V21H15V14H9V21H3Z"/>
+            </svg>
+
+            <span>홈</span>
+
+        </a>
+
+
+        <a href="list.html" class="nav-item active">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M4 3V9Q4 12 7 12Q10 12 10 9V3
+                         M7 3V21
+                         M17 3Q13 8 15 12H19
+                         M19 3V21"/>
+            </svg>
+
+            <span>메뉴</span>
+
+        </a>
+
+
+        <a href="../payments_finish/payments_finish.html"
+           class="nav-item">
+
+            <svg viewBox="0 0 24 24">
+                <path d="M3 6H21V10Q17 12 21 14V18H3V14
+                         Q7 12 3 10Z
+                         M12 7V9 M12 11V13 M12 15V17"/>
+            </svg>
+
+            <span>쿠폰</span>
+
+        </a>
+
+
+        <button type="button"
+                class="nav-item"
+                id="bottomMenuBtn">
+
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="7" r="4"/>
+                <path d="M4 21V18Q4 13 12 13Q20 13 20 18V21"/>
+            </svg>
+
+            <span>마이페이지</span>
+
+        </button>
+
+    </nav>
+
+</div>
+
+
+<!-- =========================
+     햄버거 슬라이드 메뉴
+========================== -->
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<nav class="side-menu" id="sideMenu">
+
+    <div class="side-menu-header">
+
+        <h2>입떡볶이.</h2>
+
+        <button type="button"
+                class="close-menu-btn"
+                id="closeMenuBtn"
+                aria-label="메뉴 닫기">
+            ×
+        </button>
+
+    </div>
+
+    <p class="side-menu-description">
+        입덕할 만큼 맛있는 떡볶이
+    </p>
+
+    <ul class="side-menu-list">
+
+        <li>
+            <a href="../../index.html">
+                메인 페이지
+            </a>
+        </li>
+
+        <li>
+            <a href="list.html">
+                메뉴 목록
+            </a>
+        </li>
+
+        <li>
+            <a href="../details/detail.html">
+                메뉴 상세
+            </a>
+        </li>
+
+        <li>
+            <a href="../paymetns/payments.html">
+                결제 페이지
+            </a>
+        </li>
+
+        <li>
+            <a href="../payments_finish/payments_finish.html">
+                결제 완료 페이지
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script>
+
+    /* 햄버거 메뉴 */
+
+    const menuBtn = document.getElementById('menuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const bottomMenuBtn = document.getElementById('bottomMenuBtn');
+
+    function openMenu() {
+
+        sideMenu.classList.add('active');
+        menuOverlay.classList.add('active');
+
+        menuBtn.setAttribute('aria-expanded', 'true');
+
+        document.body.style.overflow = 'hidden';
+
+    }
+
+    function closeMenu() {
+
+        sideMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+
+        menuBtn.setAttribute('aria-expanded', 'false');
+
+        document.body.style.overflow = '';
+
+    }
+
+    menuBtn.addEventListener('click', function () {
+
+        if (sideMenu.classList.contains('active')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+
+    });
+
+    bottomMenuBtn.addEventListener('click', openMenu);
+    closeMenuBtn.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', function (event) {
+
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
+
+    });
+
+
+    /* 카테고리 선택 */
+
+    const categoryLinks =
+        document.querySelectorAll('a.category-btn');
+
+    categoryLinks.forEach(function (link) {
+
+        link.addEventListener('click', function () {
+
+            categoryLinks.forEach(function (item) {
+                item.classList.remove('active');
+            });
+
+            link.classList.add('active');
 
         });
 
-        // 배경 클릭 시 메뉴 닫기
-        menuOverlay.addEventListener('click', function () {
+    });
 
-            sideMenu.classList.remove('active');
-            menuOverlay.classList.remove('active');
 
-            menuBtn.setAttribute('aria-expanded', 'false');
+    /* 사이드 메뉴 추가 및 선택 취소 */
+
+    const addButtons =
+        document.querySelectorAll('.side-add-btn');
+
+    const selectionSummary =
+        document.getElementById('selectionSummary');
+
+    const selectedCount =
+        document.getElementById('selectedCount');
+
+    const selectedTotal =
+        document.getElementById('selectedTotal');
+
+    const selectedItems = new Map();
+
+
+    addButtons.forEach(function (button) {
+
+        button.addEventListener('click', function () {
+
+            const name = button.dataset.name;
+            const price = Number(button.dataset.price);
+
+            if (selectedItems.has(name)) {
+
+                selectedItems.delete(name);
+
+                button.classList.remove('selected');
+                button.textContent = '+';
+                button.setAttribute('aria-pressed', 'false');
+
+            } else {
+
+                selectedItems.set(name, price);
+
+                button.classList.add('selected');
+                button.textContent = '✓';
+                button.setAttribute('aria-pressed', 'true');
+
+            }
+
+            updateSelection();
 
         });
-    </script>
+
+    });
+
+
+    function updateSelection() {
+
+        let total = 0;
+
+        selectedItems.forEach(function (price) {
+            total += price;
+        });
+
+        selectedCount.textContent =
+            '선택한 사이드 ' + selectedItems.size + '개';
+
+        selectedTotal.textContent =
+            total.toLocaleString('ko-KR') + '원';
+
+        selectionSummary.hidden =
+            selectedItems.size === 0;
+
+    }
+
+</script>
 
 </body>
 </html>

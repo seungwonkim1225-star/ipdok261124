@@ -1,31 +1,419 @@
-/* =========================
-   PAGE NAVIGATION
-========================= */
 
-.page-navigation {
-    width: 100%;
-    padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+
+/* ==============================
+   기본 설정
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.page-navigation a {
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.finish-wrap {
+    width: 100%;
+    max-width: 500px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background: #fff;
+    padding-bottom: 30px;
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+.finish-header {
+    position: relative;
+    height: 60px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #eee;
+}
 
-    width: 100%;
-    height: 55px;
+.finish-header h1 {
+    font-size: 18px;
+    font-weight: 700;
+}
 
-    padding: 0 20px;
+.close-btn {
+    position: absolute;
+    right: 20px;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+}
 
-    background-color: #888888;
+
+/* ==============================
+   결제 완료 안내
+============================== */
+
+.success-section {
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.success-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff0ed;
+    color: #e53935;
+    border-radius: 50%;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.success-section h2 {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.success-section p {
+    font-size: 13px;
+    color: #999;
+}
+
+
+/* ==============================
+   공통 카드
+============================== */
+
+.finish-card {
+    margin: 0 20px 16px;
+    padding: 22px 18px;
+    border: 1px solid #e8e8e8;
     border-radius: 10px;
+    background: #fff;
+}
 
-    color: #ffffff;
+.card-title {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
 
-    text-decoration: none;
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.info-row span {
+    color: #888;
+}
+
+.info-row strong {
+    font-weight: 500;
+    text-align: right;
+}
+
+
+/* ==============================
+   주문 상품
+============================== */
+
+.product-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.product-image {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: #d9d9d9;
+}
+
+.product-info h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.product-info p {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 7px;
+}
+
+.product-info strong {
+    font-size: 15px;
+}
+
+
+/* ==============================
+   스탬프 쿠폰
+============================== */
+
+.stamp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.stamp-header .card-title {
+    margin-bottom: 0;
+}
+
+.stamp-count {
+    color: #e53935;
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+.stamp-description {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+
+/* 캐릭터 5개씩 2줄 */
+
+.stamp-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px 8px;
+}
+
+.stamp-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.stamp-item svg {
+    display: block;
+    width: 100%;
+    max-width: 70px;
+    height: auto;
+}
+
+.stamp-item span {
+    font-size: 11px;
+    color: #999;
+}
+
+
+/* ==============================
+   적립 전 캐릭터 : 흰색
+============================== */
+
+.stamp-circle {
+    fill: #f7f7f7;
+    stroke: #ddd;
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+}
+
+.rice-cake {
+    fill: #fff;
+    stroke: #c5c5c5;
+    stroke-width: 1.5;
+    transition: fill 0.4s ease;
+}
+
+.face {
+    fill: #999;
+}
+
+.smile {
+    fill: none;
+    stroke: #999;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+}
+
+.cheek {
+    fill: #e5e5e5;
+}
+
+
+/* ==============================
+   적립 후 캐릭터 : 빨간색
+============================== */
+
+.stamp-item.filled .stamp-circle {
+    fill: #fff0ed;
+    stroke: #ef3939;
+}
+
+.stamp-item.filled .rice-cake {
+    fill: #ed4037;
+    stroke: #b82924;
+}
+
+.stamp-item.filled .face {
+    fill: #66201b;
+}
+
+.stamp-item.filled .smile {
+    stroke: #66201b;
+}
+
+.stamp-item.filled .cheek {
+    fill: #ffaaa2;
+}
+
+.stamp-item.filled span {
+    color: #e53935;
+    font-weight: 700;
+}
+
+
+/* ==============================
+   스탬프 진행바
+============================== */
+
+.stamp-progress {
+    width: 100%;
+    height: 7px;
+    margin-top: 25px;
+    background: #eee;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: #e53935;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+.stamp-message {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #e53935;
+}
+
+
+/* ==============================
+   결제 정보
+============================== */
+
+.line {
+    width: 100%;
+    height: 1px;
+    background: #eee;
+    margin: 20px 0;
+}
+
+.total-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.total-price span {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.total-price strong {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+
+/* ==============================
+   하단 페이지 이동 버튼
+============================== */
+
+.finish-footer {
+    padding: 10px 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home-btn,
+.list-btn {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.home-btn {
+    background: #e53935;
+    color: #fff;
+}
+
+.list-btn {
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #333;
+}
+
+.home-btn:active,
+.list-btn:active {
+    opacity: 0.8;
+}
+
+
+/* ==============================
+   작은 모바일 화면
+============================== */
+
+@media (max-width: 360px) {
+
+    .finish-card {
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 18px 14px;
+    }
+
+    .stamp-grid {
+        gap: 12px 5px;
+    }
+
+    .stamp-description {
+        font-size: 11px;
+    }
+
+    .success-section h2 {
+        font-size: 21px;
+    }
+
 }
